@@ -1,4 +1,8 @@
+language: java
 addons:
   apt:
     packages:
       - oracle-java8-installer
+services: postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
