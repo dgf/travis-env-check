@@ -1,4 +1,3 @@
-
 addons:
   postgresql: "9.4"
   apt:
@@ -8,3 +7,6 @@ language: java
 services: postgresql
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
+  - sed -e's/^foo=\(.*\)$/done/' env.properties
+  - cat env.properties
+  - cd .. && ls -al
