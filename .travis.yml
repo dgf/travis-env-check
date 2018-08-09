@@ -9,5 +9,4 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - sed -i -e's/^foo=\(.*\)$/foo=done/' env.properties
   - cat env.properties
-  - cd .. && ls -al
 script: mvn clean install
