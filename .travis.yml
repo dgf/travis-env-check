@@ -10,3 +10,4 @@ before_script:
   - sed -i -e's/^foo=\(.*\)$/foo=done/' env.properties
   - cat env.properties
   - cd .. && ls -al
+script: mvn clean install
