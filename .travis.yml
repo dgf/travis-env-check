@@ -1,12 +1,7 @@
 addons:
   postgresql: "9.4"
-  apt:
-    packages:
-      - oracle-java8-installer
+  apt: packages: oracle-java8-installer
 language: java
 services: postgresql
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - sed -i -e's/^foo=\(.*\)$/foo=done/' env.properties
-  - cat env.properties
+before_script: psql -c 'create database travis_ci_test;' -U postgres
 script: mvn clean install
